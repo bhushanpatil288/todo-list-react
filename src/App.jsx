@@ -8,8 +8,8 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element= {<UpcomingPage />} />
-        <Route path="/today" element={<TodayPage />} />
+        <Route path="/" element={<TodayPage />} />
+        <Route path="/upcoming" element= {<UpcomingPage />} />
         <Route path="/notes" element= {<NotesPage />}/>
         <Route path="/settings" element={<SettingsPage />} />
       </Routes>

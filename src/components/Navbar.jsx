@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div className="bg-blue-100 px-3 py-4 h-100 flex flex-col justify-between">
+    <div className="bg-blue-100 px-3 py-4 h-screen flex flex-col justify-between">
       <div>
         <NavbarHeading />
 
@@ -19,7 +19,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <NavLink to={"/Settings"} className={({ isActive }) => isActive ? "bg-blue-300 rounded flex gap-3 px-2 ps-5 py-1 items-center shadow transition-all transition-duration:200ms" : "flex gap-3 py-1 px-2 items-center hover:bg-blue-200 rounded transition-all transition-duration:200ms"}>
+      <NavLink to={"/Settings"} className={({ isActive }) => isActive ? "bg-blue-500 text-white rounded flex gap-3 px-2 py-1 items-center shadow transition-all transition-duration:200ms" : "flex gap-3 py-1 px-2 items-center hover:bg-blue-200 rounded transition-all transition-duration:200ms"}>
         <CiSettings size={20}/>
         Settings
       </NavLink>

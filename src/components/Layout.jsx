@@ -2,7 +2,7 @@ import Navbar from "./Navbar"
 
 const Layout = ({children}) => {
   return (
-    <div className="flex mx-3 my-3">
+    <div className="flex">
       <div className="overflow-hidden rounded w-1/5 shadow">
         <Navbar />
       </div>

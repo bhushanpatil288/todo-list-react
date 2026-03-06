@@ -4,14 +4,14 @@ import { FaRegNoteSticky } from "react-icons/fa6";
 
 export const exploreList = [
   {
-    title: "Upcoming",
+    title: "Today",
     link: "/",
-    icon: SlControlForward
+    icon: VscChecklist
   },
   {
-    title: "Today",
-    link: "/today",
-    icon: VscChecklist
+    title: "Upcoming",
+    link: "/upcoming",
+    icon: SlControlForward
   },
   {
     title: "Notes",
