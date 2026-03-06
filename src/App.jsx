@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import UpcomingPage from "./pages/UpcomingPage"
 import TodayPage from "./pages/TodayPage"
 import NotesPage from "./pages/NotesPage"
+import SettingsPage from "./pages/SettingsPage"
 
 const App = () => {
   return (
@@ -10,6 +11,7 @@ const App = () => {
         <Route path="/" element= {<UpcomingPage />} />
         <Route path="/today" element={<TodayPage />} />
         <Route path="/notes" element= {<NotesPage />}/>
+        <Route path="/settings" element={<SettingsPage />} />
       </Routes>
     </BrowserRouter>
   )
