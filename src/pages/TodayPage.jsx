@@ -1,11 +1,14 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import Layout from "../components/Layout"
 import { IoMdAdd } from "react-icons/io";
 import CreateTask from "../components/CreateTask";
+import {TaskContext} from "../context/Tasks";
+
 
 const TodayPage = () => {
+  const {tasks, setTasks} = useContext(TaskContext)
 
-  const[isOpen, setIsOpen] = useState(true);
+  const[isOpen, setIsOpen] = useState(false);
 
   return (
     <Layout>
@@ -17,7 +20,20 @@ const TodayPage = () => {
             <p className="">Add New Task</p>
           </button>
         </div>
+        <ul>
+          {
+            tasks.map((task, idx)=>{
+              return (
+                <li key={idx} className="flex gap-3 mx-3 px-2 py-3 hover:bg-blue-100 rounded border-b border-gray-200" >
+                  <input type="checkbox" id={idx+"task"} />
+                  <label htmlFor={idx+"task"} className="cursor-pointer">{task.taskTitle}</label>
+                </li>
+              )
+            })
+          }
+        </ul>
         <CreateTask isOpen={isOpen} setIsOpen={setIsOpen} />
+        
       </div>
     </Layout>
   )
