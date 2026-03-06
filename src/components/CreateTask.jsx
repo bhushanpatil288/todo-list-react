@@ -1,17 +1,28 @@
+import { useContext, useState } from "react";
 import { IoIosCloseCircle } from "react-icons/io";
+import { TaskContext } from "../context/Tasks";
+
 const CreateTask = ({ isOpen, setIsOpen }) => {
+  const [taskInfo, setTaskInfo] = useState({
+    taskTitle: "", tag: ""
+  })
+
+  const { tasks, setTasks } = useContext(TaskContext);
+
+  const handleChange = (e) =>{
+    setTaskInfo({...taskInfo, [e.target.id]:e.target.value})
+  }
 
   const handleSubmit=(e)=>{
     e.preventDefault();
-
+    setTasks([...tasks, {...taskInfo, id: Date.now(), complete: false}])
     setIsOpen(false)
   }
 
   return (
     <>
-      {console.log(isOpen)}
       {isOpen &&
-        <div className="w-100 bg-blue-100 shadow">
+        <div className="w-100 bg-blue-100 shadow absolute mt-30">
           <div className="text-end px-3 py-3">
             <button
               className="cursor-pointer text-blue-500 hover:text-red-500 transition-all duration-200"
@@ -26,14 +37,16 @@ const CreateTask = ({ isOpen, setIsOpen }) => {
                   id="taskTitle"
                   name="taskTitle"
                   placeholder="Enter task title"
+                  value={taskInfo.taskTitle}
+                  onChange={handleChange}
                   className="bg-white rounded-2xl inset-1 inset-shadow outline-0 px-3 py-2 w-full"
                 />
               </div>
               <div className="flex gap-5 mt-10 items-center">
                 <label htmlFor="tag">Tags</label>
-                <select name="tag" id="tag" className="bg-white rounded-2xl px-5 py-2">
+                <select name="tag" id="tag" className="bg-white rounded-2xl px-5 py-2" onChange={handleChange}>
                   <option value="">No List</option>
-                  <option value="2">test</option>
+                  <option value="1">test</option>
                 </select>
               </div>
               <div className="text-center mt-10">
