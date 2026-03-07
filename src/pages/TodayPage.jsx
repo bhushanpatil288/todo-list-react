@@ -7,7 +7,7 @@ import RenderTasks from "../components/TodayPageComponents/RenderTasks";
 
 
 const TodayPage = () => {
-  const {tasks} = useContext(TaskContext)
+  const { tasks, filter } = useContext(TaskContext)
 
   const[isOpen, setIsOpen] = useState(false);
 
@@ -23,7 +23,7 @@ const TodayPage = () => {
           </button>
         </div>
 
-        <RenderTasks tasks={tasks} />
+        <RenderTasks tasks={tasks} filter={filter} />
       
         <CreateTask isOpen={isOpen} setIsOpen={setIsOpen} />
         

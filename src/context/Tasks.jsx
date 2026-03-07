@@ -3,8 +3,9 @@ import { createContext, useEffect, useState } from "react"
 export const TaskContext = createContext(null);
 
 const Tasks = ({children}) => {
-  const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem('tasks')) || [{complete:false, id: 1, tag: "High", taskTitle: "High Priority task"}, {complete:true, id: 2, tag: "Medium", taskTitle: "Medium Priority task"} ]);
-  const [tags, setTags] = useState(JSON.parse(localStorage.getItem('tags')) || ["High", "Medium"]);
+  const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem('tasks')) || [{complete:false, id: 1, tag: "High", taskTitle: "High Priority task"}, {complete:true, id: 2, tag: "Medium", taskTitle: "Medium Priority task"}, {complete: false, id:0, tag:"YouCanDeleteIt", taskTitle: "This are the sample tasks"} ]);
+  const [tags, setTags] = useState(JSON.parse(localStorage.getItem('tags')) || ["High", "Medium", "YouCanDeleteIt"]);
+  const [filter, setFilter] = useState([])
 
   useEffect(()=>{
     localStorage.setItem('tasks', JSON.stringify(tasks));
@@ -41,7 +42,7 @@ const Tasks = ({children}) => {
   }
 
   return (
-    <TaskContext value={{tasks, addTask, toggleTaskStatus, deleteTask, tags, addTag, deleteTag}}>
+    <TaskContext value={{tasks, addTask, toggleTaskStatus, deleteTask, tags, addTag, deleteTag, filter, setFilter}}>
       {children}
     </TaskContext>
   )
