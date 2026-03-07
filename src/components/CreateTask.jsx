@@ -7,7 +7,7 @@ const CreateTask = ({ isOpen, setIsOpen }) => {
     taskTitle: "", tag: ""
   })
 
-  const { tasks, setTasks } = useContext(TaskContext);
+  const { tasks, setTasks, addTask } = useContext(TaskContext);
 
   const handleChange = (e) =>{
     setTaskInfo({...taskInfo, [e.target.id]:e.target.value})
@@ -15,7 +15,8 @@ const CreateTask = ({ isOpen, setIsOpen }) => {
 
   const handleSubmit=(e)=>{
     e.preventDefault();
-    setTasks([...tasks, {...taskInfo, id: Date.now(), complete: false}])
+    addTask({...taskInfo, id: Date.now(), complete:false});
+    // setTasks([...tasks, {...taskInfo, id: Date.now(), complete: false}])
     setIsOpen(false)
   }
 
@@ -46,7 +47,7 @@ const CreateTask = ({ isOpen, setIsOpen }) => {
                 <label htmlFor="tag">Tags</label>
                 <select name="tag" id="tag" className="bg-white rounded-2xl px-5 py-2" onChange={handleChange}>
                   <option value="">No List</option>
-                  <option value="1">test</option>
+                  <option value="value">test</option>
                 </select>
               </div>
               <div className="text-center mt-10">
