@@ -1,9 +1,9 @@
 import { createContext, useState } from "react";
 
-export const NavbarContext = createContext(false);
+export const NavbarContext = createContext(true);
 
 const NavbarContextProvider=({children})=>{
-  const [isNavOpen, setIsNavOpen] = useState(false);
+  const [isNavOpen, setIsNavOpen] = useState(true);
   return (
     <NavbarContext value={{isNavOpen, setIsNavOpen}}>
       {children}
