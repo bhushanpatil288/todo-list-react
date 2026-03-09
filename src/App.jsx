@@ -3,12 +3,12 @@ import UpcomingPage from "./pages/UpcomingPage"
 import TodayPage from "./pages/TodayPage"
 import NotesPage from "./pages/NotesPage"
 import SettingsPage from "./pages/SettingsPage"
-import Tasks from "./context/Tasks"
+import TaskContextProvider from "./context/TaskContextProvider"
 import NavbarContextProvider from "./context/NavbarContextProvider"
 
 const App = () => {
   return (
-    <Tasks>
+    <TaskContextProvider>
       <NavbarContextProvider>
         <BrowserRouter>
           <Routes>
@@ -19,7 +19,7 @@ const App = () => {
           </Routes>
         </BrowserRouter>
       </NavbarContextProvider>
-    </Tasks>
+    </TaskContextProvider>
   )
 }
 

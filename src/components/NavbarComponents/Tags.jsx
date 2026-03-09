@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { IoMdAdd } from "react-icons/io";
 import CreateTag from "../CreateTag";
-import { TaskContext } from "../../context/Tasks";
+import { TaskContext } from "../../context/TaskContextProvider";
 import RenderTags from "./RenderTags";
 
 

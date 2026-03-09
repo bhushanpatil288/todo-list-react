@@ -1,5 +1,5 @@
 import { FaTrash } from "react-icons/fa6";
-import { TaskContext } from "../../context/Tasks";
+import { TaskContext } from "../../context/TaskContextProvider";
 import { useContext } from "react";
 
 const RenderTags = ({ tags, isNavOpen }) => {

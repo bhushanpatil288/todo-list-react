@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { IoIosCloseCircle } from "react-icons/io";
-import { TaskContext } from "../context/Tasks";
+import { TaskContext } from "../context/TaskContextProvider";
 
 const CreateTask = ({ isOpen, setIsOpen }) => {
   const [taskInfo, setTaskInfo] = useState({

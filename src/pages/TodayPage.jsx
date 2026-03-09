@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import Layout from "../components/Layout"
 import { IoMdAdd } from "react-icons/io";
 import CreateTask from "../components/CreateTask";
-import {TaskContext} from "../context/Tasks";
+import {TaskContext} from "../context/TaskContextProvider";
 import RenderTasks from "../components/TodayPageComponents/RenderTasks";
 
 

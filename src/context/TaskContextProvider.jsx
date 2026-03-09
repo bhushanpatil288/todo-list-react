@@ -2,8 +2,9 @@ import { createContext, useEffect, useState } from "react"
 
 export const TaskContext = createContext(null);
 
-const Tasks = ({children}) => {
+const TaskContextProvider = ({children}) => {
   const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem('tasks')) || [{complete:false, id: 1, tag: "High", taskTitle: "High Priority task"}, {complete:true, id: 2, tag: "Medium", taskTitle: "Medium Priority task"}, {complete: false, id:0, tag:"YouCanDeleteIt", taskTitle: "This are the sample tasks"} ]);
+  const [taskToEdit, setTaskToEdit] = useState(null);
   const [tags, setTags] = useState(JSON.parse(localStorage.getItem('tags')) || ["High", "Medium", "YouCanDeleteIt"]);
   const [filter, setFilter] = useState([])
 
@@ -41,11 +42,12 @@ const Tasks = ({children}) => {
     setTags(newTags);
   }
 
+
   return (
-    <TaskContext value={{tasks, addTask, toggleTaskStatus, deleteTask, tags, addTag, deleteTag, filter, setFilter}}>
+    <TaskContext value={{tasks, setTasks, addTask, toggleTaskStatus, deleteTask, taskToEdit, setTaskToEdit, tags, addTag, deleteTag, filter, setFilter}}>
       {children}
     </TaskContext>
   )
 }
 
-export default Tasks
+export default TaskContextProvider

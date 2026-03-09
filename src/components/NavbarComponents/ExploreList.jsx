@@ -1,6 +1,6 @@
 import { exploreList } from "../../constants/data"
 import { NavLink } from "react-router-dom"
-import { TaskContext } from "../../context/Tasks"
+import { TaskContext } from "../../context/TaskContextProvider"
 import { useContext } from "react"
 
 const ExploreList = ({ isNavOpen, setIsNavOpen }) => {
