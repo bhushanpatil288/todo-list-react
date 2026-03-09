@@ -2,7 +2,9 @@ import Layout from "../components/Layout"
 
 const SettingsPage = () => {
   return (
-    <Layout>SettingsPage</Layout>
+    <Layout>
+      <h2 className="font-bold p-2 text-2xl">Settings</h2>
+    </Layout>
   )
 }
 
