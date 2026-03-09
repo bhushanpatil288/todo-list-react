@@ -29,7 +29,7 @@ const CreateTask = ({ taskToEdit, setTaskToEdit }) => {
 
   return (
     taskToEdit &&
-    <form className="flex justify-center items-center gap-3" onSubmit={handleSubmit}>
+    <form className="flex justify-center items-center gap-3 flex-col sm:flex-row" onSubmit={handleSubmit}>
       <div className="flex gap-1 flex-col items-center">
         <div>
           <input
